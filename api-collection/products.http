@@ -1,0 +1,72 @@
+@baseUrl = http://localhost:3000/api
+
+#Products
+
+# @name getAllCategories
+GET {{baseUrl}}/products
+
+###
+
+# @name addNewProduct
+POST  {{baseUrl}}/products
+Content-Type: application/json
+
+{
+    "category": "1220a200-12e0-4bc7-bc0f-ab692d97b191",
+    "name" : "IPhone 12",
+    "color" : "mint green",
+    "price" : "500.00",
+    "thumbnailUrl" : "https://hatocase.com/wp-content/uploads/2020/10/iphone-12-pro-max-1.jpg" 
+}
+
+###
+
+# @name filterProduct
+GET  {{baseUrl}}/products?_page=6&_limit=5
+
+###
+
+# @name filterProduct
+GET  {{baseUrl}}/products?color=grey&price_gte=200
+
+###
+
+# @name pagination
+GET  {{baseUrl}}/products?_page=1&_limit=10
+
+###
+
+# @name sort
+
+GET  {{baseUrl}}/products?_sort=price&_order=asc
+Content-Type: application/json
+
+{
+    "category": "1220a200-12e0-4bc7-bc0f-ab692d97b191",
+    "name" : "IPhone 12",
+    "color" : "mint green",
+    "price" : "500.00",
+    "thumbnailUrl" : "https://hatocase.com/wp-content/uploads/2020/10/iphone-12-pro-max-1.jpg" 
+}
+
+### 
+
+# @name updateCategory
+
+PATCH {{baseUrl}}/products/JOotqyy
+Content-Type: application/json
+
+{
+    "category": "1220a200-12e0-4bc7-bc0f-ab692d97b191",
+    "name" : "IPhone 12 promax",
+    "color" : "mint green",
+    "price" : 700.00,
+    "thumbnailUrl" : "https://hatocase.com/wp-content/uploads/2020/10/iphone-12-pro-max-1.jpg" 
+}
+
+
+### 
+
+# @name deteleCategory
+
+DELETE {{baseUrl}}/products/JOotqyy
